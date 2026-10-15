@@ -1,0 +1,155 @@
+# ============================================================================
+# Voice AI Assistant - Production Requirements
+# Stack: LiveKit + Pipecat + LangGraph + Claude/GPT-4 + ElevenLabs
+# ============================================================================
+
+# Core Framework & Orchestration
+# ============================================================================
+pipecat-ai                  # Real-time voice pipeline framework
+livekit                        # LiveKit WebRTC client
+livekit-agents                # LiveKit agent framework
+livekit-plugins-silero         # Silero VAD (Voice Activity Detection)
+livekit-plugins-google        # Google STT/TTS plugins
+livekit-plugins-openai         # OpenAI plugin for LLM/TTS
+livekit-plugins-elevenlabs     # ElevenLabs plugin
+
+mcp>=2.0                       # Model Context Protocol SDK (client + server; v2 renamed FastMCP -> MCPServer)
+
+langgraph                     # Agentic workflow orchestration
+langchain                      # LLM framework & tools
+langchain-core                 # Core components
+langchain-anthropic            # Anthropic Claude integration
+langchain-openai               # OpenAI integration
+langchain-community            # Community integrations
+
+# LLM & Language Models
+# ============================================================================
+#anthropic                    # Anthropic API (Claude)
+openai                        # OpenAI API (GPT-4.1, etc.)
+google-generativeai            # Google Gemini
+
+# Speech Processing (STT/TTS)
+# ============================================================================
+elevenlabs                    # ElevenLabs TTS library
+deepgram-sdk                   # Deepgram STT (fallback)
+google-cloud-speech           # Google Cloud Speech-to-Text
+pydub                         # Audio processing
+
+# Data & State Management
+# ============================================================================
+redis                     # Redis for caching & session state
+pydantic                        # Data validation
+pydantic-settings              # Settings management
+sqlalchemy                    # Database ORM
+alembic                       # Database migrations
+psycopg2-binary                # PostgreSQL adapter
+
+# Web Framework & API
+# ============================================================================
+fastapi                      # Web framework
+uvicorn                       # ASGI server
+httpx                         # Async HTTP client
+aiohttp                        # Async HTTP client/server
+websocket                      # WebSocket support
+
+# Audio Processing
+# ============================================================================
+numpy                         # Numerical computing
+scipy                         # Scientific computing
+librosa                       # Audio analysis
+soundfile                     # Audio I/O
+pyaudio                       # Audio device I/O (optional)
+
+# LLM Observability & Monitoring
+# ============================================================================
+langsmith                     # LangChain observability
+opentelemetry-api            # OpenTelemetry tracing
+opentelemetry-sdk
+opentelemetry-exporter-otlp
+opentelemetry-instrumentation-fastapi
+opentelemetry-instrumentation-redis
+opentelemetry-instrumentation-sqlalchemy
+
+# Monitoring & Logging
+# ============================================================================
+python-json-logger           # JSON logging
+structlog                    # Structured logging
+loguru                        # Enhanced logging
+sentry-sdk                   # Error tracking
+
+# Utilities
+# ============================================================================
+python-dotenv                 # Environment variables
+pyyaml                        # YAML parsing
+tenacity                      # Retry logic
+backoff                       # Backoff decorator
+python-dateutil               # Date utilities
+pytz                         # Timezone support
+
+# Type Hints & Development
+# ============================================================================
+typing-extensions            # Extended type hints
+pydantic-core                # Pydantic core
+
+# Security
+# ============================================================================
+cryptography               # Encryption
+python-jose                   # JWT handling
+passlib                       # Password hashing
+pycryptodome               # Cryptography suite
+
+
+
+# ============================================================================
+# Optional/Conditional Dependencies
+# ============================================================================
+
+# For local LLM inference (Ollama, GGML)
+# ollama==0.1.0                       # Ollama client
+# llama-cpp-python==0.2.18           # Local GGML inference
+
+# For advanced audio processing
+# pystoi==0.3.3                      # Speech Quality Assessment
+# pesq==0.0.4                        # PESQ speech quality metric
+
+# For database (PostgreSQL with async support)
+# asyncpg==0.28.0                    # PostgreSQL async driver
+# alembic==1.13.0                    # Migrations
+
+# For message queue (Celery)
+# celery==5.3.4                      # Task queue
+# kombu==5.3.4                       # Message transport
+
+# ============================================================================
+# Python Version Requirement
+# ============================================================================
+# Python >= 3.10, < 3.13
+
+# ============================================================================
+# Notes on Specific Package Versions
+# ============================================================================
+# 
+# Pipecat (0.61.0):
+#   - Latest stable version with Pipecat Cloud support
+#   - Compatible with Python 3.10+
+#   - Includes native MCP (Model Context Protocol) support
+#
+# LiveKit (0.8.3):
+#   - Latest version with adaptive turn-detection
+#   - WebRTC protocol optimizations
+#   - Python 3.10+ required
+#
+# LangGraph (0.1.14):
+#   - Latest stable 0.1.x release
+#   - Backward compatible
+#   - Checkpointing improvements
+#
+# Anthropic/OpenAI:
+#   - Latest versions for streaming support
+#   - gpt-4-turbo, Claude Sonnet 4.6, etc.
+#
+# ElevenLabs (0.2.27):
+#   - Latest with WebSocket streaming support
+#   - Sub-300ms latency optimizations
+#
+# ============================================================================

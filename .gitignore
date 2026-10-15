@@ -1,0 +1,33 @@
+# .gitignore
+
+# Secrets - never commit API keys (OpenAI, ElevenLabs, LiveKit, etc.)
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+*.egg
+build/
+dist/
+
+# Virtual environments
+voice_agent/
+.venv/
+venv/
+env/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Local scratch/output
+*.tmp
