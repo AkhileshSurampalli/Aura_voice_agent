@@ -82,9 +82,6 @@ Required environment variables (see `.env.example`):
 | `LIVEKIT_URL` | LiveKit server address |
 | `LIVEKIT_API_KEY` / `LIVEKIT_API_SECRET` | LiveKit room token generation |
 
-**Never commit `.env`** — it's gitignored. If you're cloning this and your
-copy lives inside a cloud-synced folder (OneDrive, Dropbox, etc.), be aware
-that's a separate exposure path from git and isn't covered by `.gitignore`.
 
 ## Running
 
