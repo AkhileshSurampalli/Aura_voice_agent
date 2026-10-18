@@ -35,12 +35,11 @@ Agent audio out (WebRTC/LiveKit)
 **Tool execution** happens two ways:
 - Travel tools (`pick_random_place`, `plan_itinerary`) run behind an **MCP
   server** ([`mcp_server/travel_server.py`](mcp_server/travel_server.py)),
-  called over stdio by an MCP client in the agent — this keeps tool
+  called over stdio by an MCP client in the agent. This keeps tool
   implementation decoupled from the conversational agent, so a different
   MCP server (e.g. a hosted Maps provider's own server) can be swapped in
   by changing one client config, not the agent code.
-- Booking/support tools are in-process mocks (in-memory data) — see
-  [Known limitations](#known-limitations).
+- Booking/support tools are in-process mocks.
 
 ## Project layout
 
